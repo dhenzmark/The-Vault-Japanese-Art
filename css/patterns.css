@@ -29,7 +29,6 @@
   background: var(--washi);
 }
 .plate-window img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hanko, .plate-vertical { will-change: transform; }
 .plate figcaption { margin-top: 8px; font-size: .8rem; line-height: 1.5; color: var(--sumi-soft); }
 
 /* Era or subject name set top-to-bottom, as on a scroll label */
@@ -49,5 +48,5 @@
   padding: 7px 5px; border-radius: 3px;
   background: var(--shu); color: #fff;
   box-shadow: 0 0 0 2px var(--shu), inset 0 0 0 1.5px rgba(255, 255, 255, .55);
-  rotate: -3deg; /* separate from transform, which the parallax script drives */
+  transform: rotate(-3deg);
 }

@@ -31,15 +31,15 @@ export const Sakoku = () => `
         <h3 data-slide="left">Ukiyo-e: pictures of the floating world</h3>
         <p><em>Ukiyo</em> once meant the sorrowful, passing world of Buddhist thought. In Edo's lively city districts it came to mean living for the moment. Woodblock prints celebrated that world, and because a single set of carved blocks could print hundreds of copies, ordinary townspeople could afford them.</p>
         <ul class="ukiyo-subjects">
-          <li data-speed="0.14" data-speed-mobile="0" data-slide="left">
+          <li data-slide="left">
             ${Plate({ image: images.utamaro, pattern: 'shippo', seal: '歌麿' })}
             <strong>Everyday life</strong><span>Fashionable beauties, street scenes, and city pleasures, as in the prints of Kitagawa Utamaro.</span>
           </li>
-          <li data-speed="-0.14" data-speed-mobile="0" data-slide="fade">
+          <li data-slide="fade">
             ${Plate({ image: images.sharaku, pattern: 'shippo', seal: '写楽' })}
             <strong>Theatre</strong><span>Kabuki actors in famous roles, the celebrities of their day, captured by artists such as Tōshūsai Sharaku.</span>
           </li>
-          <li data-speed="0.14" data-speed-mobile="0" data-slide="right">
+          <li data-slide="right">
             ${Plate({ image: images.kirifuri, pattern: 'seigaiha', seal: '北斎' })}
             <strong>Nature and travel</strong><span>Landscapes, weather, and Mount Fuji, perfected by Hokusai and Hiroshige.</span>
           </li>

@@ -1,6 +1,5 @@
 // Hanko-style seal: vermilion square with the text set vertically, like an artist's stamp on a print.
-// It floats above its picture, moving faster than the page (parallax).
-export const Seal = (text) => `<span class="hanko" data-speed="-0.25" data-speed-mobile="-0.15" aria-hidden="true" lang="ja">${text}</span>`
+export const Seal = (text) => `<span class="hanko" aria-hidden="true" lang="ja">${text}</span>`
 
 // A framed picture on a textile-pattern mat, with optional seal and vertical title, plus caption.
 //   pattern   seigaiha | shippo | cord   (css/patterns.css)
@@ -15,7 +14,7 @@ export const Plate = ({ image, pattern = 'seigaiha', seal, vertical, className =
       </div>
       ${seal ? Seal(seal) : ''}
     </div>
-    ${vertical ? `<span class="plate-vertical" data-speed="0.18" data-speed-mobile="0.1" aria-hidden="true" lang="ja">${vertical}</span>` : ''}
+    ${vertical ? `<span class="plate-vertical" aria-hidden="true" lang="ja">${vertical}</span>` : ''}
     ${caption ? `<figcaption>${image.caption}</figcaption>` : ''}
   </figure>
 `

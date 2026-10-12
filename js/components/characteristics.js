@@ -31,15 +31,15 @@ export const Characteristics = () => `
           <p class="lead">Much of Western art, from Greek sculpture to Renaissance painting, reached for flawless symmetry and perfection. Japanese art often looks the other way. Wabi-sabi finds deep beauty in imperfection, asymmetry, and impermanence: weathered surfaces, cracked ceramics, and fleeting moments.</p>
           <div class="principles">
             <div class="principle" data-slide="left">
-              <div class="principle-kanji" data-speed="-0.2" data-speed-mobile="-0.1" lang="ja">侘</div>
+              <div class="principle-kanji" lang="ja">侘</div>
               <div><h4>Wabi — humble simplicity</h4><p>The quiet beauty of plain, rustic things: a rough tea bowl, an unpainted wooden beam, a bare room.</p></div>
             </div>
             <div class="principle" data-slide="right">
-              <div class="principle-kanji" data-speed="-0.2" data-speed-mobile="-0.1" lang="ja">寂</div>
+              <div class="principle-kanji" lang="ja">寂</div>
               <div><h4>Sabi — the beauty of age</h4><p>The patina that time leaves behind. Wear, rust, and repairs show an object's history, and that history is valued, as in a kintsugi bowl mended with gold.</p></div>
             </div>
             <div class="principle is-ma" data-slide="left">
-              <div class="principle-kanji" data-speed="-0.2" data-speed-mobile="-0.1" lang="ja">間</div>
+              <div class="principle-kanji" lang="ja">間</div>
               <div><h4>A related idea: ma, negative space</h4><p>Emptiness is not absence. The pause between forms gives them energy and focus, as in the bare gold between Sōtatsu's wind and thunder gods.</p></div>
             </div>
           </div>

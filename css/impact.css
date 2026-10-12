@@ -22,7 +22,7 @@
 .compare { margin: 0 0 clamp(48px, 7vw, 80px); }
 .compare-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 3vw, 40px); max-width: 620px; }
 .compare-year { display: block; font-family: var(--font-head); font-weight: 700; font-size: 1.4rem; color: var(--shu); margin-bottom: 8px; }
-.compare-caption { max-width: var(--measure); margin-top: 72px; color: var(--sumi-soft); font-size: 1rem; }
+.compare-caption { max-width: var(--measure); margin-top: 18px; color: var(--sumi-soft); font-size: 1rem; }
 @media (max-width: 640px) {
   .compare-pair { gap: 10px; }
   .compare .plate-frame { padding: 6px; border-radius: 10px; }
