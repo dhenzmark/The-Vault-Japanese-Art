@@ -1,5 +1,5 @@
 /* ─── Masterpieces ───────────────────────────────────────────────────────── */
-.works { display: grid; gap: clamp(64px, 10vw, 128px); }
+.works { display: grid; gap: clamp(64px, 10vw, 128px); margin-top: 48px; }
 .work { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
 .work:nth-child(even) .work-media { order: 2; }
 .work-media {

@@ -14,7 +14,7 @@ export const Characteristics = () => `
       <ol class="cores">
         <li class="core">
           <header class="core-head"><span class="core-num">1</span><h3>Nature and spirituality</h3></header>
-          ${Plate({ image: images.kinkakuji, pattern: 'seigaiha', seal: '自然', className: 'core-plate', slide: 'left', speed: 0.08 })}
+          ${Plate({ image: images.kinkakuji, pattern: 'seigaiha', seal: '自然', className: 'core-plate', slide: 'left' })}
           <div class="themes">
             <p class="lead">In Japan, nature is never just a background; it is sacred. Shintoism sees divine spirits, <em>kami</em>, in mountains, trees, and water, and Zen Buddhism teaches quiet attention to the natural world. Japanese art becomes a reflection on both the power and the calm harmony of nature.</p>
             <ul class="theme-list" data-slide="right">
@@ -27,7 +27,7 @@ export const Characteristics = () => `
 
         <li class="core">
           <header class="core-head"><span class="core-num">2</span><h3>The philosophy of wabi-sabi</h3></header>
-          ${Plate({ image: images.kintsugi, pattern: 'shippo', seal: '侘寂', className: 'core-plate', slide: 'right', speed: 0.08 })}
+          ${Plate({ image: images.kintsugi, pattern: 'shippo', seal: '侘寂', className: 'core-plate', slide: 'right' })}
           <p class="lead">Much of Western art, from Greek sculpture to Renaissance painting, reached for flawless symmetry and perfection. Japanese art often looks the other way. Wabi-sabi finds deep beauty in imperfection, asymmetry, and impermanence: weathered surfaces, cracked ceramics, and fleeting moments.</p>
           <div class="principles">
             <div class="principle" data-slide="left">
@@ -47,7 +47,7 @@ export const Characteristics = () => `
 
         <li class="core">
           <header class="core-head"><span class="core-num">3</span><h3>Functional mastery and mediums</h3></header>
-          ${Plate({ image: images.fujinRaijin, pattern: 'seigaiha', seal: '用美', className: 'core-plate', slide: 'left', speed: 0.08 })}
+          ${Plate({ image: images.fujinRaijin, pattern: 'seigaiha', seal: '用美', className: 'core-plate', slide: 'left' })}
           <p class="lead">Japanese artists didn't only paint canvases to hang in galleries. They turned everyday life into high art, mastering woodblock printing, gilding temples in gold leaf, and painting folding room screens (<em>byōbu</em>) that transformed ordinary spaces. Later thinkers called this <em>yō no bi</em>, the beauty of useful things.</p>
           <div class="materials-grid">
             <div class="material" data-slide="left"><strong>Woodblock printing (nishiki-e)</strong><p>"Brocade pictures": a separate carved block for each colour, printed in careful registration to build full-colour images.</p></div>

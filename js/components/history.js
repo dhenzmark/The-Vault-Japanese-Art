@@ -3,7 +3,7 @@ import { Plate } from './plate.js'
 
 const Era = (era) => `
   <article class="era">
-    <div class="era-media${era.images.length > 1 ? ' is-pair' : ''}" data-speed="0.12" data-speed-mobile="0.05" data-slide="left">
+    <div class="era-media${era.images.length > 1 ? ' is-pair' : ''}" data-speed="0.08" data-speed-mobile="0.04" data-slide="left">
       ${era.images.map((image, i) => Plate({ image, pattern: era.pattern, vertical: i === 0 ? era.vertical : '', caption: era.images.length === 1 })).join('')}
       ${era.images.length > 1 ? `<p class="era-captions">${era.images.map(img => img.caption).join('<br />')}</p>` : ''}
     </div>

@@ -14,7 +14,7 @@
 .ukiyo { margin-top: clamp(48px, 7vw, 80px); }
 .ukiyo h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .5em; }
 .ukiyo > p { max-width: var(--measure); color: var(--sumi-soft); }
-.ukiyo-subjects { margin: 24px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); }
+.ukiyo-subjects { margin: 64px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); }
 .ukiyo-subjects li { display: flex; flex-direction: column; }
 .ukiyo-subjects .plate { margin-bottom: 16px; }
 /* Same caption height in every card so the three titles line up */
