@@ -1,4 +1,4 @@
-import { Nav } from './components/nav.js'
+import { Nav, initNav } from './components/nav.js'
 import { Hero } from './components/hero.js'
 import { History } from './components/history.js'
 import { Sakoku } from './components/sakoku.js'
@@ -33,6 +33,7 @@ document.getElementById('app').innerHTML = `
 `
 
 // ─── Behaviour ───────────────────────────────────────────────────────────────
+initNav()
 initArtworkDialog()
 initQuiz()
 initParallax()

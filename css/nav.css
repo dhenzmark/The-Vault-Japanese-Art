@@ -22,8 +22,7 @@
   font-family: var(--font-brush); font-size: .8rem; line-height: 1;
   writing-mode: vertical-rl;
 }
-.nav-links { display: flex; gap: 4px; margin: 0 auto; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
-.nav-links::-webkit-scrollbar { display: none; }
+.nav-links { display: flex; gap: 4px; margin: 0 0 0 auto; padding: 0; list-style: none; }
 .nav-links a {
   display: block; padding: 6px 14px; border-radius: 999px;
   text-decoration: none; font-size: .9rem; white-space: nowrap;
@@ -33,7 +32,35 @@
 .nav.is-solid .nav-links a:hover { background: var(--washi-deep); }
 .nav-links a.is-active { background: var(--shu); color: #fff; }
 
-@media (max-width: 640px) {
-  .brand-name { display: none; }
-  .nav { padding-left: 8px; }
+/* Menu toggle (three bars that turn into an X), shown only on smaller screens */
+.nav-toggle {
+  display: none; margin-left: auto;
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255, 255, 255, 0.16); color: inherit;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.nav.is-solid .nav-toggle { background: var(--washi-deep); }
+.nav-toggle span { display: block; width: 18px; height: 2px; border-radius: 1px; background: currentColor; transition: transform .25s ease, opacity .2s ease; }
+.nav.is-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav.is-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav.is-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Below 1024px the four long section names no longer fit in one row: collapse them into a panel */
+@media (max-width: 1024px) {
+  .nav { padding: 6px 6px 6px 16px; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+    flex-direction: column; gap: 2px; margin: 0; padding: 8px;
+    border-radius: 20px; background: var(--washi); color: var(--sumi);
+    box-shadow: 0 16px 40px rgba(28, 35, 49, .22);
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+  }
+  .nav.is-open .nav-links { opacity: 1; visibility: visible; transform: none; transition: opacity .2s ease, transform .2s ease; }
+  .nav-links a { padding: 12px 16px; border-radius: 14px; font-size: 1rem; }
+  .nav-links a:hover, .nav.is-solid .nav-links a:hover { background: var(--washi-deep); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-links, .nav-toggle span { transition: none; }
 }
