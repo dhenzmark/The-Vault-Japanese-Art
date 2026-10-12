@@ -7,6 +7,8 @@
   background: var(--washi-deep); cursor: zoom-in; border: 0; padding: 0; width: 100%;
 }
 .work-media img { position: absolute; left: 0; top: -20%; width: 100%; height: 140%; object-fit: cover; will-change: transform; }
+/* Pictures that must show edge to edge (wide screens) sit flush, without parallax drift */
+.work-media img.no-drift { top: 0; height: 100%; }
 .work-date { font-family: var(--font-head); font-weight: 700; color: var(--shu); }
 .work h3 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin: .2em 0 .15em; }
 .work .jp-title, .dialog-body .jp-title { font-family: var(--font-brush); font-size: 1.3rem; color: var(--sumi-soft); margin-bottom: 1em; }
