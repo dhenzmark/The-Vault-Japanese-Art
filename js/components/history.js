@@ -3,11 +3,11 @@ import { Plate } from './plate.js'
 
 const Era = (era) => `
   <article class="era">
-    <div class="era-media${era.images.length > 1 ? ' is-pair' : ''}" data-speed="0.12" data-speed-mobile="0.05">
+    <div class="era-media${era.images.length > 1 ? ' is-pair' : ''}" data-speed="0.12" data-speed-mobile="0.05" data-slide="left">
       ${era.images.map((image, i) => Plate({ image, pattern: era.pattern, vertical: i === 0 ? era.vertical : '', caption: era.images.length === 1 })).join('')}
       ${era.images.length > 1 ? `<p class="era-captions">${era.images.map(img => img.caption).join('<br />')}</p>` : ''}
     </div>
-    <div class="era-body">
+    <div class="era-body" data-slide="right">
       <div class="era-date">${era.date}</div>
       <h3>${era.title}</h3>
       <p>${era.text}</p>
@@ -22,7 +22,7 @@ export const History = () => `
   <section id="history" class="has-ghost">
     <div class="ghost layer ghost-right" data-speed="0.6" data-speed-mobile="0.4" aria-hidden="true">歴</div>
     <div class="wrap">
-      <div class="section-head"><h2>Historical Development</h2><span class="jp">歴史</span></div>
+      <div class="section-head" data-slide="left"><h2>Historical Development</h2><span class="jp">歴史</span></div>
       <p class="lead">Japanese art grew through long stretches of absorbing ideas from the continent, then turning inward to make them its own. Each era below marks a shift in who made art, for whom, and why.</p>
 
       <div class="timeline" id="timeline">

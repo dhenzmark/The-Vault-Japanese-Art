@@ -9,7 +9,6 @@ import { Impact } from './components/impact.js'
 import { Quiz, initQuiz } from './components/quiz.js'
 import { Footer } from './components/footer.js'
 import { ArtworkDialog, initArtworkDialog } from './components/artwork-dialog.js'
-import { Marquee } from './components/marquee.js'
 import { bands } from './data/bands.js'
 import { initParallax } from './effects/parallax.js'
 import { initTimelineInk } from './effects/timeline-ink.js'
@@ -20,16 +19,12 @@ document.getElementById('app').innerHTML = `
   ${Nav()}
   ${Hero()}
   <main>
-    ${Marquee({ jp: '歴史', en: 'History' })}
     ${History()}
     ${Sakoku()}
     ${ParallaxBand(bands.wave)}
-    ${Marquee({ jp: '特徴', en: 'Characteristics' })}
     ${Characteristics()}
     ${ParallaxBand(bands.kintsugi)}
-    ${Marquee({ jp: '名作', en: 'Masterpieces' })}
     ${Masterpieces()}
-    ${Marquee({ jp: '影響', en: 'Impact' })}
     ${Impact()}
     ${Quiz()}
   </main>

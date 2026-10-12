@@ -5,9 +5,9 @@ export const Quiz = () => `
   <section id="quiz" class="quiz has-ghost">
     <div class="ghost layer ghost-right ghost-light" data-speed="0.55" data-speed-mobile="0.35" aria-hidden="true">問</div>
     <div class="wrap">
-      <div class="section-head"><h2>Match the Masterpiece</h2><span class="jp">クイズ</span></div>
+      <div class="section-head" data-slide="left"><h2>Match the Masterpiece</h2><span class="jp">クイズ</span></div>
       <p class="lead">Five questions on the works and ideas above. Pick an answer to see if you're right.</p>
-      <div class="quiz-card" id="quiz-card" aria-live="polite"></div>
+      <div class="quiz-card" id="quiz-card" data-slide="right" aria-live="polite"></div>
     </div>
   </section>
 `
