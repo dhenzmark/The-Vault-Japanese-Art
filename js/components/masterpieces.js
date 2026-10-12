@@ -3,10 +3,10 @@ import { artworks } from '../data/artworks.js'
 // One gallery row per artwork. Clicking the image or the button opens js/components/artwork-dialog.js.
 const Work = (a, i) => `
   <article class="work">
-    <button class="work-media" data-slide="${i % 2 ? 'right' : 'left'}" type="button" data-open="${a.id}" aria-label="Open analysis of ${a.title}"${a.frame ? ` style="aspect-ratio:${a.frame}"` : ''}>
+    <button class="work-media" data-speed="-0.06" data-speed-mobile="0" data-slide="${i % 2 ? 'right' : 'left'}" type="button" data-open="${a.id}" aria-label="Open analysis of ${a.title}"${a.frame ? ` style="aspect-ratio:${a.frame}"` : ''}>
       <img src="${a.image}" alt="${a.title}" loading="lazy" decoding="async"${a.focus ? ` style="object-position:${a.focus}"` : ''} />
     </button>
-    <div class="work-text" data-slide="${i % 2 ? 'left' : 'right'}">
+    <div class="work-text" data-speed="0.12" data-speed-mobile="0" data-slide="${i % 2 ? 'left' : 'right'}">
       <div class="work-date">${a.date}</div>
       <h3>${a.title}</h3>
       <div class="jp-title" lang="ja">${a.jp}</div>

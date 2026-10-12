@@ -6,8 +6,9 @@ export const Seal = (text) => `<span class="hanko" aria-hidden="true" lang="ja">
 //   vertical  Japanese text set top-to-bottom along the mat
 //   caption   false to leave the caption out (when the parent shows captions together)
 //   slide     left | right | fade: slides in sideways as it scrolls into view (js/effects/parallax.js)
-export const Plate = ({ image, pattern = 'seigaiha', seal, vertical, className = '', caption = true, slide }) => `
-  <figure class="plate pattern-${pattern} ${className}"${slide ? ` data-slide="${slide}"` : ''}>
+//   speed     optional up/down drift of the whole framed card; the picture never moves inside its frame
+export const Plate = ({ image, pattern = 'seigaiha', seal, vertical, className = '', caption = true, slide, speed }) => `
+  <figure class="plate pattern-${pattern} ${className}"${slide ? ` data-slide="${slide}"` : ''}${speed ? ` data-speed="${speed}" data-speed-mobile="0"` : ''}>
     <div class="plate-frame">
       <div class="plate-window"${image.aspect ? ` style="aspect-ratio:${image.aspect}"` : ''}>
         <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"${image.focus ? ` style="object-position:${image.focus}"` : ''} />
