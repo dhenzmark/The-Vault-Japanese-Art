@@ -11,11 +11,11 @@ export const Impact = () => `
 
         <figure class="compare">
           <div class="compare-pair">
-            <div class="compare-item">
+            <div class="compare-item" data-speed="0.09" data-speed-mobile="0.04">
               <span class="compare-year">1857</span>
               ${Plate({ image: images.hiroshige, pattern: 'seigaiha', seal: '広重' })}
             </div>
-            <div class="compare-item">
+            <div class="compare-item" data-speed="-0.09" data-speed-mobile="-0.04">
               <span class="compare-year">1887</span>
               ${Plate({ image: images.vanGogh, pattern: 'shippo', seal: 'ゴッホ' })}
             </div>

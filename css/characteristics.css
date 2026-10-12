@@ -13,7 +13,7 @@
 .core > .lead { margin-bottom: 28px; }
 /* Wide banner picture under each numbered heading; the seal names the characteristic */
 .core-plate { margin-bottom: 28px; }
-.core-plate .plate-frame img { aspect-ratio: 21 / 8 !important; }
+.core-plate .plate-window { aspect-ratio: 21 / 8 !important; }
 .core-plate .hanko { font-size: 1.25rem; padding: 9px 6px; }
 .themes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); }
 .theme-list { margin: 0; padding: 0; list-style: none; }
@@ -48,7 +48,7 @@
   .core-head { flex-wrap: nowrap; align-items: center; gap: 12px; }
   .core-num { width: 36px; height: 36px; font-size: 1rem; flex-shrink: 0; }
   .core-head h3 { font-size: 1.4rem; }
-  .core-plate .plate-frame img { aspect-ratio: 16 / 10 !important; }
+  .core-plate .plate-window { aspect-ratio: 16 / 10 !important; }
   .principle { grid-template-columns: 52px 1fr; gap: 14px; align-items: start; padding: 18px; border-radius: 16px; }
   .principle-kanji { font-size: 2.4rem; text-align: left; }
   .principle.is-ma { padding-block: 32px; }

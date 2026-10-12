@@ -11,7 +11,11 @@
 .pattern-cord     { --pattern: var(--pat-cord); }
 
 /* A thin patterned band marking the top edge of a section */
-.pattern-band { position: absolute; left: 0; right: 0; top: 0; height: 22px; background: var(--washi-deep) var(--pattern); opacity: .9; }
+.pattern-band {
+  position: absolute; left: 0; right: 0; top: 0; height: 22px; opacity: .9;
+  background: var(--washi-deep) var(--pattern);
+  background-position: calc(var(--scroll, 0) * -0.35px) 0;
+}
 
 /* ─── Plate: a picture on a patterned mat ─────────────────────────────────── */
 .plate { position: relative; margin: 0; }
@@ -19,11 +23,15 @@
   position: relative; padding: 10px; border-radius: 14px;
   background-color: var(--washi-deep); background-image: var(--pattern);
 }
-.plate-frame img {
-  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+.plate-window {
+  position: relative; overflow: hidden; aspect-ratio: 4 / 3;
   border-radius: 6px; box-shadow: 0 8px 22px rgba(28, 35, 49, .18);
+  background: var(--washi);
 }
-.plate-frame img.fit-contain { object-fit: contain; background: var(--washi); }
+/* Oversized so it can drift (js/effects/parallax.js clamps the drift to this spare height) */
+.plate-window img { position: absolute; left: 0; top: -12%; width: 100%; height: 124%; object-fit: cover; will-change: transform; }
+.plate-window img.no-drift { top: 0; height: 100%; }
+.hanko, .plate-vertical { will-change: transform; }
 .plate figcaption { margin-top: 8px; font-size: .8rem; line-height: 1.5; color: var(--sumi-soft); }
 
 /* Era or subject name set top-to-bottom, as on a scroll label */
@@ -43,5 +51,5 @@
   padding: 7px 5px; border-radius: 3px;
   background: var(--shu); color: #fff;
   box-shadow: 0 0 0 2px var(--shu), inset 0 0 0 1.5px rgba(255, 255, 255, .55);
-  transform: rotate(-3deg);
+  rotate: -3deg; /* separate from transform, which the parallax script drives */
 }

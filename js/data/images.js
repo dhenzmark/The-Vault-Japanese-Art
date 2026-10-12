@@ -1,5 +1,6 @@
 // Every supporting image on the page, with its caption and credit.
-// `aspect` is the crop shape used in a Plate; `focus` is the object-position that keeps the subject in frame.
+// `aspect` is the crop shape used in a Plate; `focus` is the object-position that keeps the subject in frame;
+// `drift: false` keeps a picture still inside its frame (see js/components/plate.js).
 // The footer credits list is built from the `commons` entries (public domain / CC0, via Wikimedia Commons).
 const COMMONS = 'https://commons.wikimedia.org/wiki/File:'
 
@@ -22,6 +23,7 @@ export const images = {
   },
   genji: {
     src: 'images/era-heian.jpg',
+    drift: false, // wide work: drifting would crop its edges
     aspect: '16 / 10',
     alt: 'Scroll painting of court ladies in a palace room, seen from above without a roof',
     caption: 'Illustrated Tale of Genji handscroll, Azumaya chapter, c. 1130. Tokugawa Art Museum, Nagoya.',
@@ -38,12 +40,14 @@ export const images = {
   },
   fujinRaijin: {
     src: 'images/artwork3.jpg',
+    drift: false, // wide work: drifting would crop its edges
     aspect: '2 / 1',
     alt: 'Gold folding screens with the wind god and thunder god at opposite edges',
     caption: 'Tawaraya Sōtatsu, Wind God and Thunder God Screens, early 17th century. Kennin-ji, Kyoto.',
   },
   perry: {
     src: 'images/era-meiji.jpg',
+    drift: false, // wide work: drifting would crop its edges
     aspect: '7 / 3',
     alt: 'Painted scroll of American warships anchored in a bay with crowds on shore',
     caption: 'Attributed to Hibata Ōsuke, The Mission of Commodore Perry to Japan in 1854 (detail), handscroll. British Museum.',

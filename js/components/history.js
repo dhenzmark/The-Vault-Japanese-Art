@@ -3,7 +3,7 @@ import { Plate } from './plate.js'
 
 const Era = (era) => `
   <article class="era">
-    <div class="era-media${era.images.length > 1 ? ' is-pair' : ''}">
+    <div class="era-media${era.images.length > 1 ? ' is-pair' : ''}" data-speed="0.07" data-speed-mobile="0">
       ${era.images.map((image, i) => Plate({ image, pattern: era.pattern, vertical: i === 0 ? era.vertical : '', caption: era.images.length === 1 })).join('')}
       ${era.images.length > 1 ? `<p class="era-captions">${era.images.map(img => img.caption).join('<br />')}</p>` : ''}
     </div>
@@ -19,7 +19,8 @@ const Era = (era) => `
 // Part 1: art history timeline, one illustrated card per era.
 // The vermilion ink line is drawn by js/effects/timeline-ink.js.
 export const History = () => `
-  <section id="history">
+  <section id="history" class="has-ghost">
+    <div class="ghost layer ghost-right" data-speed="0.4" data-speed-mobile="0.25" aria-hidden="true">歴</div>
     <div class="wrap">
       <div class="section-head"><h2>Historical Development</h2><span class="jp">歴史</span></div>
       <p class="lead">Japanese art grew through long stretches of absorbing ideas from the continent, then turning inward to make them its own. Each era below marks a shift in who made art, for whom, and why.</p>
