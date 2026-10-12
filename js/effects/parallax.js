@@ -8,11 +8,9 @@ const smallScreen = window.matchMedia('(max-width: 640px)')
 // [data-speed-mobile]  optional gentler speed on phones, where stacked blocks sit closer together
 // [data-slide]         left | right | fade: slides in sideways and fades in as it scrolls into view,
 //                      tied to the scroll position (reverses when scrolling back up)
-// [data-parallax]      an oversized image drifting inside its clipped frame, never past the frame's spare height
 // --scroll             page offset exposed to CSS, used to slide the pattern bands sideways
 export const initParallax = () => {
   const movers = [...document.querySelectorAll('[data-speed], [data-slide]')]
-  const images = [...document.querySelectorAll('[data-parallax]')]
   const root = document.documentElement
 
   const ease = (t) => 1 - Math.pow(1 - t, 3)
@@ -26,8 +24,6 @@ export const initParallax = () => {
     // Read phase: all layout reads first, so the writes below don't force extra reflows
     const parentRects = movers.map(el => el.parentElement.getBoundingClientRect())
     const ownRects = movers.map(el => el.dataset.slide ? el.getBoundingClientRect() : null)
-    const frameRects = images.map(el => el.parentElement.getBoundingClientRect())
-    const imageHeights = images.map(el => el.offsetHeight)
 
     // Write phase
     movers.forEach((el, i) => {
@@ -62,14 +58,6 @@ export const initParallax = () => {
         ? `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)${scale !== 1 ? ` scale(${scale})` : ''}`
         : ''
       if (opacity !== null) el.style.opacity = opacity.toFixed(3)
-    })
-
-    images.forEach((el, i) => {
-      const r = frameRects[i]
-      if (r.bottom < 0 || r.top > vh) return
-      const spare = (imageHeights[i] - r.height) / 2
-      const shift = (r.top + r.height / 2 - vh / 2) * -parseFloat(el.dataset.parallax)
-      el.style.transform = `translate3d(0, ${Math.max(-spare, Math.min(spare, shift)).toFixed(1)}px, 0)`
     })
   })
 }

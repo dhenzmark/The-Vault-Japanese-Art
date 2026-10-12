@@ -6,14 +6,12 @@ export const Seal = (text) => `<span class="hanko" data-speed="-0.25" data-speed
 //   pattern   seigaiha | shippo | cord   (css/patterns.css)
 //   vertical  Japanese text set top-to-bottom along the mat
 //   caption   false to leave the caption out (when the parent shows captions together)
-// The picture drifts inside its window as you scroll, unless the image is marked drift: false
-// (very wide works, where the extra height needed for drifting would crop their edges).
 //   slide     left | right | fade: slides in sideways as it scrolls into view (js/effects/parallax.js)
 export const Plate = ({ image, pattern = 'seigaiha', seal, vertical, className = '', caption = true, slide }) => `
   <figure class="plate pattern-${pattern} ${className}"${slide ? ` data-slide="${slide}"` : ''}>
     <div class="plate-frame">
       <div class="plate-window"${image.aspect ? ` style="aspect-ratio:${image.aspect}"` : ''}>
-        <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"${image.drift === false ? ' class="no-drift"' : ' data-parallax="0.3"'}${image.focus ? ` style="object-position:${image.focus}"` : ''} />
+        <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"${image.focus ? ` style="object-position:${image.focus}"` : ''} />
       </div>
       ${seal ? Seal(seal) : ''}
     </div>

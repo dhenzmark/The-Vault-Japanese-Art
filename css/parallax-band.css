@@ -6,8 +6,8 @@
   background: var(--sumi); color: #fff;
 }
 .band-media { position: absolute; inset: 0; overflow: hidden; }
-/* Oversized so the image can drift without its edges showing (js/effects/parallax.js clamps to this) */
-.band-media img { position: absolute; left: -8%; top: -60%; width: 116%; height: 220%; object-fit: cover; will-change: transform; }
+/* Slightly wider than the strip to trim scan borders at the sides */
+.band-media img { position: absolute; left: -8%; top: 0; width: 116%; height: 100%; object-fit: cover; }
 .band-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,35,49,.82) 0%, rgba(28,35,49,.35) 60%, rgba(28,35,49,.15) 100%); }
 .band-right .band-shade { background: linear-gradient(270deg, rgba(28,35,49,.82) 0%, rgba(28,35,49,.35) 60%, rgba(28,35,49,.15) 100%); }
 

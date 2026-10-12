@@ -4,7 +4,7 @@ import { artworks } from '../data/artworks.js'
 const Work = (a, i) => `
   <article class="work">
     <button class="work-media" data-slide="${i % 2 ? 'right' : 'left'}" type="button" data-open="${a.id}" aria-label="Open analysis of ${a.title}"${a.frame ? ` style="aspect-ratio:${a.frame}"` : ''}>
-      <img src="${a.image}" alt="${a.title}" loading="lazy" decoding="async"${a.drift === false ? ' class="no-drift"' : ' data-parallax="0.35"'}${a.focus ? ` style="object-position:${a.focus}"` : ''} />
+      <img src="${a.image}" alt="${a.title}" loading="lazy" decoding="async"${a.focus ? ` style="object-position:${a.focus}"` : ''} />
     </button>
     <div class="work-text" data-speed="0.12" data-speed-mobile="0" data-slide="${i % 2 ? 'left' : 'right'}">
       <div class="work-date">${a.date}</div>
