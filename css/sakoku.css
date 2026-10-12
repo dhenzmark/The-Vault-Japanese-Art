@@ -17,6 +17,8 @@
 .ukiyo-subjects { margin: 24px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); }
 .ukiyo-subjects li { display: flex; flex-direction: column; }
 .ukiyo-subjects .plate { margin-bottom: 16px; }
+/* Same caption height in every card so the three titles line up */
+.ukiyo-subjects .plate figcaption { min-height: 3em; }
 .ukiyo-subjects strong { padding-top: 12px; border-top: 2px solid var(--shu); }
 .ukiyo-subjects strong { display: block; font-family: var(--font-head); font-size: 1.2rem; margin-bottom: .3em; }
 .ukiyo-subjects span { color: var(--sumi-soft); }

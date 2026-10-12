@@ -66,11 +66,13 @@ export const images = {
     license: 'CC0',
     commons: '三代目大谷鬼次の奴江戸兵衛-Kabuki Actor Ōtani Oniji III as Yakko Edobei in the Play The Colored Reins of a Loving Wife (Koi nyōbō somewake tazuna) MET DP130228.jpg',
   },
-  greatWave: {
-    src: 'images/artwork1.jpg',
-    aspect: '3 / 4',
-    alt: 'Woodblock print of a giant wave over boats, with Mount Fuji in the distance',
-    caption: 'Katsushika Hokusai, The Great Wave off Kanagawa, c. 1830–1832.',
+  kirifuri: {
+    src: 'images/ukiyo-hokusai.jpg',
+    aspect: '3 / 4', focus: 'center 40%',
+    alt: 'Woodblock print of travellers at the foot of a waterfall that spreads like fingers over rocks',
+    caption: 'Katsushika Hokusai, Kirifuri Waterfall at Kurokami Mountain, c. 1832. The Metropolitan Museum of Art.',
+    license: 'CC0',
+    commons: 'Kirifuri Waterfall at Kurokami Mountain in Shimotsuke (Shimotsuke Kurokamiyama Kirifuri no taki), from the series A Tour of Waterfalls in Various Provinces (Shokoku taki meguri) MET DP141247.jpg',
   },
   hiroshige: {
     src: 'images/ukiyo-hiroshige.jpg',

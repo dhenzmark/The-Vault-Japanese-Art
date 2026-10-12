@@ -39,7 +39,7 @@ export const Sakoku = () => `
             <strong>Theatre</strong><span>Kabuki actors in famous roles, the celebrities of their day, captured by artists such as Tōshūsai Sharaku.</span>
           </li>
           <li>
-            ${Plate({ image: images.greatWave, pattern: 'seigaiha', seal: '北斎' })}
+            ${Plate({ image: images.kirifuri, pattern: 'seigaiha', seal: '北斎' })}
             <strong>Nature and travel</strong><span>Landscapes, weather, and Mount Fuji, perfected by Hokusai and Hiroshige.</span>
           </li>
         </ul>
