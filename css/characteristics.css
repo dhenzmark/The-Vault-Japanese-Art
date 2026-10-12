@@ -10,8 +10,11 @@
   background: var(--shu); color: #fff; font: 700 1.1rem var(--font-head); align-self: center;
 }
 .core-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
-.core-jp { white-space: nowrap; margin-left: auto; font-family: var(--font-brush); font-size: 1.8rem; color: var(--shu); }
 .core > .lead { margin-bottom: 28px; }
+/* Wide banner picture under each numbered heading; the seal names the characteristic */
+.core-plate { margin-bottom: 28px; }
+.core-plate .plate-frame img { aspect-ratio: 21 / 8 !important; }
+.core-plate .hanko { font-size: 1.25rem; padding: 9px 6px; }
 .themes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); }
 .theme-list { margin: 0; padding: 0; list-style: none; }
 .theme-list li { padding: 18px 0; border-top: 1px solid rgba(28,35,49,.12); }
@@ -42,10 +45,10 @@
 }
 @media (max-width: 640px) {
   .cores { gap: 48px; }
-  .core-head { display: grid; grid-template-columns: 36px 1fr; column-gap: 12px; row-gap: 0; align-items: center; }
-  .core-num { width: 36px; height: 36px; font-size: 1rem; grid-row: span 2; }
+  .core-head { flex-wrap: nowrap; align-items: center; gap: 12px; }
+  .core-num { width: 36px; height: 36px; font-size: 1rem; flex-shrink: 0; }
   .core-head h3 { font-size: 1.4rem; }
-  .core-jp { grid-column: 2; margin-left: 0; font-size: 1.1rem; }
+  .core-plate .plate-frame img { aspect-ratio: 16 / 10 !important; }
   .principle { grid-template-columns: 52px 1fr; gap: 14px; align-items: start; padding: 18px; border-radius: 16px; }
   .principle-kanji { font-size: 2.4rem; text-align: left; }
   .principle.is-ma { padding-block: 32px; }

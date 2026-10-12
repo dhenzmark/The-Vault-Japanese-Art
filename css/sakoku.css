@@ -15,7 +15,9 @@
 .ukiyo h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .5em; }
 .ukiyo > p { max-width: var(--measure); color: var(--sumi-soft); }
 .ukiyo-subjects { margin: 24px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); }
-.ukiyo-subjects li { padding-top: 16px; border-top: 2px solid var(--shu); }
+.ukiyo-subjects li { display: flex; flex-direction: column; }
+.ukiyo-subjects .plate { margin-bottom: 16px; }
+.ukiyo-subjects strong { padding-top: 12px; border-top: 2px solid var(--shu); }
 .ukiyo-subjects strong { display: block; font-family: var(--font-head); font-size: 1.2rem; margin-bottom: .3em; }
 .ukiyo-subjects span { color: var(--sumi-soft); }
 
@@ -34,4 +36,11 @@
   .contrast td::before { content: attr(data-label); font-family: var(--font-head); font-weight: 700; color: var(--sumi); }
   .contrast td:last-child::before { color: var(--shu); }
   .ukiyo-subjects { gap: 20px; }
+  /* Compact rows on phones: print on the left, text on the right */
+  .ukiyo-subjects li { display: grid; grid-template-columns: 112px 1fr; column-gap: 14px; align-items: start; }
+  .ukiyo-subjects .plate { grid-row: span 2; margin-bottom: 0; }
+  .ukiyo-subjects .plate-frame { padding: 6px; border-radius: 10px; }
+  .ukiyo-subjects .plate figcaption { display: none; }
+  .ukiyo-subjects .hanko { right: 10px; bottom: 10px; font-size: .75rem; padding: 5px 3px; }
+  .ukiyo-subjects strong { padding-top: 0; border-top: 0; }
 }

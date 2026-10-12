@@ -52,7 +52,7 @@ export const artworks = [
     period: 'Edo Period, Rinpa school',
     medium: 'Pair of two-panel folding screens; ink and colour on gold leaf',
     location: 'Kennin-ji, Kyoto (National Treasure)',
-    image: 'images/artwork3.png',
+    image: 'images/artwork3.jpg',
     summary: 'Two storm deities tumble in from opposite corners, leaving a vast field of gold between them.',
     analysis: 'Fūjin, the green-skinned wind god, carries his bag of winds; Raijin, the white thunder god, beats a ring of drums. Sōtatsu pushes both figures to the outer edges so they barely fit — the frame even crops part of Raijin\'s ring of drums — which makes them feel as if they are rushing into view. Their clouds, painted with tarashikomi (dropping ink into still-wet ink so it pools and bleeds), are the only other marks.',
     significance: 'The empty gold between the gods is the real subject: a charged field of ma where the storm is about to break. The composition so impressed later artists that Ogata Kōrin and Sakai Hōitsu both made their own copies, establishing it as a founding image of the Rinpa school and of Shinto nature deities in art.'

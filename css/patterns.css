@@ -1,0 +1,47 @@
+/* ─── Traditional textile patterns ────────────────────────────────────────── */
+/* Seigaiha: overlapping waves. Shippō: interlocking rings ("seven treasures").
+   Cord: rows of slanted twisted-cord impressions, as pressed into Jōmon pottery. */
+:root {
+  --pat-seigaiha: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cg stroke='%23c9a96a' stroke-width='1'%3E%3Cg fill='%23efe8da'%3E%3Ccircle cx='0' cy='0' r='19'/%3E%3Ccircle cx='40' cy='0' r='19'/%3E%3C/g%3E%3Cg fill='none'%3E%3Ccircle cx='0' cy='0' r='14'/%3E%3Ccircle cx='0' cy='0' r='9'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='40' cy='0' r='14'/%3E%3Ccircle cx='40' cy='0' r='9'/%3E%3Ccircle cx='40' cy='0' r='4'/%3E%3C/g%3E%3Ccircle cx='20' cy='10' r='19' fill='%23efe8da'/%3E%3Cg fill='none'%3E%3Ccircle cx='20' cy='10' r='14'/%3E%3Ccircle cx='20' cy='10' r='9'/%3E%3Ccircle cx='20' cy='10' r='4'/%3E%3C/g%3E%3Cg fill='%23efe8da'%3E%3Ccircle cx='0' cy='20' r='19'/%3E%3Ccircle cx='40' cy='20' r='19'/%3E%3C/g%3E%3Cg fill='none'%3E%3Ccircle cx='0' cy='20' r='14'/%3E%3Ccircle cx='0' cy='20' r='9'/%3E%3Ccircle cx='0' cy='20' r='4'/%3E%3Ccircle cx='40' cy='20' r='14'/%3E%3Ccircle cx='40' cy='20' r='9'/%3E%3Ccircle cx='40' cy='20' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --pat-shippo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cg fill='none' stroke='%23c9a96a' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='12'/%3E%3Ccircle cx='24' cy='0' r='12'/%3E%3Ccircle cx='0' cy='24' r='12'/%3E%3Ccircle cx='24' cy='24' r='12'/%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/g%3E%3C/svg%3E");
+  --pat-cord: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg stroke='%23b08a5a' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M1 6 L4 2 M5 6 L8 2 M9 6 L12 2 M13 6 L16 2 M1 10 L4 14 M5 10 L8 14 M9 10 L12 14 M13 10 L16 14'/%3E%3C/g%3E%3C/svg%3E");
+}
+.pattern-seigaiha { --pattern: var(--pat-seigaiha); }
+.pattern-shippo   { --pattern: var(--pat-shippo); }
+.pattern-cord     { --pattern: var(--pat-cord); }
+
+/* A thin patterned band marking the top edge of a section */
+.pattern-band { position: absolute; left: 0; right: 0; top: 0; height: 22px; background: var(--washi-deep) var(--pattern); opacity: .9; }
+
+/* ─── Plate: a picture on a patterned mat ─────────────────────────────────── */
+.plate { position: relative; margin: 0; }
+.plate-frame {
+  position: relative; padding: 10px; border-radius: 14px;
+  background-color: var(--washi-deep); background-image: var(--pattern);
+}
+.plate-frame img {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-radius: 6px; box-shadow: 0 8px 22px rgba(28, 35, 49, .18);
+}
+.plate-frame img.fit-contain { object-fit: contain; background: var(--washi); }
+.plate figcaption { margin-top: 8px; font-size: .8rem; line-height: 1.5; color: var(--sumi-soft); }
+
+/* Era or subject name set top-to-bottom, as on a scroll label */
+.plate-vertical {
+  position: absolute; top: 20px; left: 20px; z-index: 1;
+  writing-mode: vertical-rl; text-orientation: upright;
+  font-family: var(--font-brush); font-size: 1.35rem; line-height: 1; letter-spacing: .12em;
+  padding: 10px 6px; border-radius: 4px;
+  background: rgba(28, 35, 49, .78); color: var(--washi);
+}
+
+/* ─── Hanko seal ──────────────────────────────────────────────────────────── */
+.hanko {
+  position: absolute; right: 20px; bottom: 20px;
+  writing-mode: vertical-rl; text-orientation: upright;
+  font-family: var(--font-brush); font-size: 1rem; line-height: 1.05; letter-spacing: .05em;
+  padding: 7px 5px; border-radius: 3px;
+  background: var(--shu); color: #fff;
+  box-shadow: 0 0 0 2px var(--shu), inset 0 0 0 1.5px rgba(255, 255, 255, .55);
+  transform: rotate(-3deg);
+}

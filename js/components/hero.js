@@ -5,7 +5,7 @@
 export const Hero = () => `
   <header class="hero" id="top">
     <div class="layer hero-bg" data-speed="0.55" data-zoom="0.18">
-      <img src="images/artwork3.png" alt="" fetchpriority="high" />
+      <img src="images/artwork3.jpg" alt="" fetchpriority="high" />
     </div>
     <div class="hero-shade"></div>
     <div class="layer hero-kanji" data-speed="-0.45" aria-hidden="true">美</div>

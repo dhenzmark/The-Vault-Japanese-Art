@@ -1,9 +1,27 @@
+import { images } from '../data/images.js'
+import { Plate } from './plate.js'
+
 // Philosophical impact: Japonisme, influence on the West, and preservation.
 export const Impact = () => `
     <section id="impact" class="impact">
+      <div class="pattern-band pattern-shippo" aria-hidden="true"></div>
       <div class="ghost layer" data-speed="0.4" aria-hidden="true">響</div>
       <div class="wrap">
         <div class="section-head"><h2>Philosophical Impact</h2><span class="jp">影響</span></div>
+
+        <figure class="compare">
+          <div class="compare-pair">
+            <div class="compare-item">
+              <span class="compare-year">1857</span>
+              ${Plate({ image: images.hiroshige, pattern: 'seigaiha', seal: '広重' })}
+            </div>
+            <div class="compare-item">
+              <span class="compare-year">1887</span>
+              ${Plate({ image: images.vanGogh, pattern: 'shippo', seal: 'ゴッホ' })}
+            </div>
+          </div>
+          <figcaption class="compare-caption">Thirty years apart: Hiroshige's woodblock print, and Van Gogh's oil copy of it. He kept the steep bridge, the slanting rain, and the flat colour, and added a border of Japanese characters copied from other prints.</figcaption>
+        </figure>
         <div class="impact-grid">
           <div class="impact-text">
             <p class="lead">When Japan's ports reopened, its art travelled faster than its diplomats. Flat colour, high viewpoints, cropped compositions, and empty space challenged rules European painters had followed since the Renaissance.</p>

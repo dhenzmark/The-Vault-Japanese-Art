@@ -3,3 +3,7 @@ footer { background: var(--sumi); color: rgba(249,246,240,.7); border-top: 1px s
 .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 footer .brand { color: var(--washi); }
 footer a.btn { background: var(--washi); color: var(--sumi); }
+.credits { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(249,246,240,.12); font-size: .85rem; }
+.credits summary { cursor: pointer; color: var(--washi); font-weight: 700; }
+.credits ul { margin: 12px 0 0; padding-left: 18px; display: grid; gap: 6px; }
+.credits a { color: var(--kin); }
