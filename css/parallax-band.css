@@ -1,6 +1,6 @@
 /* ─── Parallax image strips ───────────────────────────────────────────────── */
 .band {
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; overflow: clip; /* clip: see css/sections.css */
   height: clamp(420px, 72vh, 680px);
   display: flex; align-items: center;
   background: var(--sumi); color: #fff;

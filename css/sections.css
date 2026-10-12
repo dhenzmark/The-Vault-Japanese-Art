@@ -23,8 +23,9 @@ section > .wrap { position: relative; z-index: 1; }
   .ghost { font-size: 11rem; }
 }
 
-/* Sections with a drifting background kanji clip it at their edges */
-.has-ghost { overflow: hidden; }
+/* Sections with a drifting background kanji clip it at their edges. `clip`, not `hidden`:
+   a `hidden` box becomes a scroll container and freezes the native scroll effects inside it */
+.has-ghost { overflow: hidden; overflow: clip; }
 .ghost-right { position: absolute; right: -4vw; top: 6%; }
 .ghost-left { position: absolute; left: -3vw; top: 10%; }
 .ghost-light { color: var(--washi); opacity: .08; }

@@ -68,10 +68,10 @@
   }
 }
 
-/* Scaled to match the JavaScript version, which measures the card's surrounding block */
+/* Same motion as the JavaScript version: offset = speed x distance from the screen's centre */
 @keyframes sda-drift {
-  from { transform: translateY(calc(var(--s) * (-80vh - 80%))); }
-  to   { transform: translateY(calc(var(--s) * (80vh + 80%))); }
+  from { transform: translateY(calc(var(--s) * (-50vh - 50%))); }
+  to   { transform: translateY(calc(var(--s) * (50vh + 50%))); }
 }
 @keyframes sda-slide {
   from { translate: var(--slide-x) 0; opacity: 0; }

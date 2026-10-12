@@ -1,5 +1,5 @@
 /* ─── Impact ─────────────────────────────────────────────────────────────── */
-.impact { overflow: hidden; }
+.impact { overflow: hidden; overflow: clip; }
 .impact .ghost { position: absolute; right: -4vw; top: 6%; }
 .impact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
 .impact-text p { max-width: var(--measure); color: var(--sumi-soft); }

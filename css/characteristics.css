@@ -1,5 +1,5 @@
 /* ─── Characteristics ───────────────────────────────────────────────────── */
-.char { background: var(--washi-deep); overflow: hidden; }
+.char { background: var(--washi-deep); overflow: hidden; overflow: clip; }
 .char .ghost { position: absolute; left: -2vw; top: 10%; }
 .char-intro { margin-bottom: clamp(40px, 6vw, 72px); }
 .cores { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(56px, 8vw, 96px); }
