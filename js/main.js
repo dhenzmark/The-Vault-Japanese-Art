@@ -10,7 +10,7 @@ import { Quiz, initQuiz } from './components/quiz.js'
 import { Footer } from './components/footer.js'
 import { ArtworkDialog, initArtworkDialog } from './components/artwork-dialog.js'
 import { bands } from './data/bands.js'
-import { initParallax } from './effects/parallax.js'
+import { initParallax, applyScrollVars, nativeScrollEffects } from './effects/parallax.js'
 import { initTimelineInk } from './effects/timeline-ink.js'
 import { initNavState } from './effects/nav-state.js'
 
@@ -36,7 +36,14 @@ document.getElementById('app').innerHTML = `
 initNav()
 initArtworkDialog()
 initQuiz()
-initParallax()
+// Scroll effects: native CSS scroll-driven animations where supported (smooth even in in-app
+// browsers), otherwise the JavaScript fallback. See css/scroll-effects.css.
+if (nativeScrollEffects) {
+  document.documentElement.classList.add('sda')
+  applyScrollVars()
+} else {
+  initParallax()
+}
 initTimelineInk()
 initNavState()
 

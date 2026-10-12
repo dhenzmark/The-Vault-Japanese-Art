@@ -2,6 +2,20 @@ import { onScroll, onLayoutChange, reduceMotion } from './scroll.js'
 
 const smallScreen = window.matchMedia('(max-width: 640px)')
 
+// Browsers that can run the effects natively from CSS (css/scroll-effects.css)
+export const nativeScrollEffects = typeof CSS !== 'undefined'
+  && CSS.supports('animation-timeline: view()')
+  && CSS.supports('animation-range: cover 0% cover 100%')
+
+// For the CSS version: copy each element's speeds into custom properties, once
+export const applyScrollVars = () => {
+  document.querySelectorAll('[data-speed]').forEach(el => {
+    el.style.setProperty('--speed-d', el.dataset.speed)
+    if (el.dataset.speedMobile !== undefined) el.style.setProperty('--speed-m', el.dataset.speedMobile)
+    if (el.dataset.zoom) el.style.setProperty('--zoom', el.dataset.zoom)
+  })
+}
+
 // [data-speed]         moves up/down relative to scroll (hero layers), to its section's top (.ghost kanji),
 //                      or to its own distance from the viewport centre (everything else).
 //                      + drifts slower than the page, - faster.

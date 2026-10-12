@@ -1,0 +1,92 @@
+/* ─── Native scroll-driven effects ────────────────────────────────────────── */
+/* Where the browser supports CSS scroll-driven animations (html.sda, set in js/main.js), every
+   scroll effect is declared here and run by the browser in step with scrolling, with no JavaScript
+   per frame. That keeps it smooth in slower in-app browsers (Messenger, Instagram, …).
+   Elsewhere js/effects/parallax.js produces the same motion.
+   Speeds come from each element's data attributes, copied once into --speed-d / --speed-m / --zoom. */
+
+@media (prefers-reduced-motion: no-preference) {
+  html.sda [data-speed] { --s: var(--speed-d, 0); }
+  html.sda [data-slide] { --slide-x: 0px; }
+  html.sda [data-slide="left"] { --slide-x: -140px; }
+  html.sda [data-slide="right"] { --slide-x: 140px; }
+  @media (max-width: 640px) {
+    html.sda [data-speed] { --s: var(--speed-m, var(--speed-d, 0)); }
+    html.sda [data-slide="left"] { --slide-x: -70px; }
+    html.sda [data-slide="right"] { --slide-x: 70px; }
+  }
+
+  /* Cards and overlays drift up/down across their whole pass through the screen */
+  html.sda main [data-speed]:not(.ghost) {
+    animation: sda-drift linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  /* Content slides in sideways and fades in over the first 40% of the screen */
+  html.sda [data-slide] {
+    animation: sda-slide cubic-bezier(.33, 1, .68, 1) both;
+    animation-timeline: view();
+    animation-range: cover 0px cover 40vh;
+  }
+  /* Both at once: slide uses `translate`, drift uses `transform`, so they combine */
+  html.sda [data-slide][data-speed] {
+    animation-name: sda-slide, sda-drift;
+    animation-timing-function: cubic-bezier(.33, 1, .68, 1), linear;
+    animation-fill-mode: both, both;
+    animation-timeline: view(), view();
+    animation-range: cover 0px cover 40vh, cover 0% cover 100%;
+  }
+
+  /* Hero layers move with the first screen of scrolling; the title also fades out */
+  html.sda .hero > [data-speed] {
+    animation: sda-hero linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 100vh;
+  }
+  html.sda .hero > [data-fade] {
+    animation-name: sda-hero, sda-fade;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+    animation-timeline: scroll(root), scroll(root);
+    animation-range: 0px 100vh, 0px 62.5vh;
+  }
+
+  /* Background kanji trail the scroll while their section fills the screen */
+  html.sda .has-ghost, html.sda .char, html.sda .impact { view-timeline-name: --section; }
+  html.sda .ghost {
+    animation: sda-ghost linear both;
+    animation-timeline: --section;
+    animation-range: contain 0% contain 100%;
+  }
+
+  /* Timeline ink draws down as the reading line (60% down the screen) passes through it */
+  html.sda .timeline { view-timeline-name: --timeline; }
+  html.sda .timeline-ink {
+    animation: sda-ink linear both;
+    animation-timeline: --timeline;
+    animation-range: cover 40vh cover calc(100% - 60vh);
+  }
+}
+
+/* Scaled to match the JavaScript version, which measures the card's surrounding block */
+@keyframes sda-drift {
+  from { transform: translateY(calc(var(--s) * (-80vh - 80%))); }
+  to   { transform: translateY(calc(var(--s) * (80vh + 80%))); }
+}
+@keyframes sda-slide {
+  from { translate: var(--slide-x) 0; opacity: 0; }
+  to   { translate: 0 0; opacity: 1; }
+}
+@keyframes sda-hero {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(calc(var(--s) * 100vh)) scale(calc(1 + var(--zoom, 0))); }
+}
+@keyframes sda-fade { to { opacity: 0; } }
+@keyframes sda-ghost {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(var(--s) * 100vh)); }
+}
+@keyframes sda-ink {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
