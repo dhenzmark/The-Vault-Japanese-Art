@@ -1,0 +1,19 @@
+/* ─── Impact ─────────────────────────────────────────────────────────────── */
+.impact { overflow: hidden; }
+.impact .ghost { position: absolute; right: -4vw; top: 6%; }
+.impact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.impact-text p { max-width: var(--measure); color: var(--sumi-soft); }
+.impact blockquote {
+  margin: 2em 0 0; padding: 0 0 0 24px; border-left: 3px solid var(--shu);
+  font-family: var(--font-head); font-size: clamp(1.3rem, 2.2vw, 1.6rem); line-height: 1.45; color: var(--sumi);
+}
+.impact blockquote cite { display: block; margin-top: .6em; font: 400 .95rem var(--font-body); color: var(--sumi-soft); }
+.chain { margin: 0; padding: 0; list-style: none; }
+.chain li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--washi-deep); }
+.chain time { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; color: var(--shu); }
+.chain strong { display: block; font-family: var(--font-head); }
+.chain span { color: var(--sumi-soft); font-size: .95rem; }
+
+@media (max-width: 900px) {
+  .impact-grid { grid-template-columns: 1fr; }
+}

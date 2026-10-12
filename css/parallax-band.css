@@ -1,0 +1,33 @@
+/* ─── Parallax image strips ───────────────────────────────────────────────── */
+.band {
+  position: relative; overflow: hidden;
+  height: clamp(420px, 72vh, 680px);
+  display: flex; align-items: center;
+  background: var(--sumi); color: #fff;
+}
+.band-media { position: absolute; inset: 0; overflow: hidden; }
+/* Oversized so the image can drift without its edges showing (js/effects/parallax.js clamps to this) */
+.band-media img { position: absolute; left: -3%; top: -35%; width: 106%; height: 170%; object-fit: cover; will-change: transform; }
+.band-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,35,49,.82) 0%, rgba(28,35,49,.35) 60%, rgba(28,35,49,.15) 100%); }
+.band-right .band-shade { background: linear-gradient(270deg, rgba(28,35,49,.82) 0%, rgba(28,35,49,.35) 60%, rgba(28,35,49,.15) 100%); }
+
+.band-kanji {
+  top: 8%; right: 6vw;
+  font-family: var(--font-brush); color: var(--shu); opacity: .9;
+  font-size: clamp(8rem, 22vw, 18rem); line-height: 1;
+  text-shadow: 0 10px 40px rgba(0,0,0,.3); pointer-events: none;
+}
+.band-right .band-kanji { right: auto; left: 6vw; }
+
+.band-copy { position: relative; z-index: 1; margin-block: 0; }
+.band-copy blockquote, .band-text {
+  margin: 0; max-width: 30ch;
+  font-family: var(--font-head); font-weight: 700; line-height: 1.35;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+}
+.band-copy figcaption { margin-top: 1em; max-width: 46ch; color: rgba(255,255,255,.78); font-size: .95rem; }
+.band-right .band-copy blockquote, .band-right .band-text, .band-right .band-copy figcaption { margin-left: auto; text-align: right; }
+
+@media (max-width: 640px) {
+  .band-kanji { font-size: 6.5rem; opacity: .55; }
+}

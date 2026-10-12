@@ -1,0 +1,29 @@
+/* ─── Sakoku & ukiyo-e spotlight ──────────────────────────────────────────── */
+.sakoku { padding-top: 0; }
+.sakoku-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
+.sakoku-grid p { max-width: var(--measure); color: var(--sumi-soft); }
+
+.contrast { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.contrast caption { text-align: left; font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
+.contrast th, .contrast td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--washi-deep); }
+.contrast thead th { font-family: var(--font-head); border-bottom: 2px solid var(--sumi); }
+.contrast thead th:last-child { color: var(--shu); }
+.contrast tbody th { font-family: var(--font-head); color: var(--sumi-soft); font-weight: 700; white-space: nowrap; }
+.contrast td { color: var(--sumi-soft); }
+
+.ukiyo { margin-top: clamp(48px, 7vw, 80px); }
+.ukiyo h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .5em; }
+.ukiyo > p { max-width: var(--measure); color: var(--sumi-soft); }
+.ukiyo-subjects { margin: 24px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); }
+.ukiyo-subjects li { padding-top: 16px; border-top: 2px solid var(--shu); }
+.ukiyo-subjects strong { display: block; font-family: var(--font-head); font-size: 1.2rem; margin-bottom: .3em; }
+.ukiyo-subjects span { color: var(--sumi-soft); }
+
+@media (max-width: 900px) {
+  .sakoku-grid { grid-template-columns: 1fr; }
+  .ukiyo-subjects { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .contrast { font-size: .85rem; }
+  .contrast th, .contrast td { padding: 10px 8px; }
+}

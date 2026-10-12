@@ -1,0 +1,60 @@
+/* ─── Hero (layered parallax) ────────────────────────────────────────────── */
+.hero {
+  position: relative; height: 100vh; min-height: 640px;
+  overflow: hidden; background: var(--sumi); color: #fff;
+}
+.hero-bg { inset: -12% 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.hero-shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(28,35,49,.55) 0%, rgba(28,35,49,0) 55%),
+    linear-gradient(180deg, rgba(28,35,49,.55) 0%, rgba(28,35,49,.15) 35%, rgba(28,35,49,.35) 70%, rgba(28,35,49,.85) 100%);
+}
+.hero-kanji {
+  right: 6vw; top: 14vh;
+  font-family: var(--font-brush); color: var(--shu);
+  font-size: clamp(9rem, 26vw, 22rem); line-height: 1;
+  text-shadow: 0 10px 40px rgba(0,0,0,.25);
+  opacity: .92; pointer-events: none;
+}
+.hero-frame {
+  z-index: 2;
+  position: absolute; inset: 96px var(--gutter) 40px;
+  border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 28px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(20px, 4vw, 48px);
+}
+.hero-copy { max-width: 44rem; }
+.hero-copy .kicker { font-family: var(--font-head); font-size: clamp(1.25rem, 2.4vw, 1.75rem); margin-bottom: .25em; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 5.2rem); font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
+.hero-sub { margin: 1rem 0 2rem; font-size: clamp(1rem, 1.6vw, 1.2rem); color: rgba(255,255,255,.85); }
+
+.hero-stats {
+  margin-top: clamp(24px, 5vh, 48px);
+  display: grid; grid-template-columns: repeat(3, auto) 1fr; gap: clamp(16px, 4vw, 56px); align-items: center;
+  padding: 16px clamp(16px, 3vw, 32px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.stat strong { display: block; font-family: var(--font-head); font-size: 1.6rem; line-height: 1.1; }
+.stat span { font-size: .85rem; color: rgba(255,255,255,.75); }
+.hero-stats .scroll-hint { justify-self: end; font-size: .9rem; color: rgba(255,255,255,.85); text-decoration: none; }
+
+/* Kumo clouds: extra height hangs below the hero so they never lift clear of its edge while rising */
+.hero-clouds { left: 0; bottom: -340px; width: 100%; height: 520px; color: var(--washi); z-index: 1; pointer-events: none; }
+
+@media (max-width: 900px) {
+  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats .scroll-hint { display: none; }
+}
+@media (max-width: 640px) {
+  .hero-frame { inset: 84px 12px 24px; border-radius: 20px; }
+  .hero-clouds { bottom: -420px; }
+  .hero-kanji { top: 10vh; right: 4vw; opacity: .55; font-size: 7.5rem; }
+  .hero-stats { gap: 12px; padding: 12px 16px; }
+  .stat strong { font-size: 1.25rem; }
+  .stat span { font-size: .75rem; }
+}

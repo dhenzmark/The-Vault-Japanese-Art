@@ -1,0 +1,56 @@
+/* ─── Tokens ─────────────────────────────────────────────────────────────── */
+:root {
+  --washi: #f9f6f0;
+  --washi-deep: #efe8da;
+  --sumi: #1c2331;
+  --sumi-soft: #4b5366;
+  --shu: #c13b2a;
+  --shu-deep: #9c2e20;
+  --kin: #d4af37;
+
+  --font-head: 'Shippori Mincho', 'Times New Roman', serif;
+  --font-body: 'Zen Kaku Gothic New', system-ui, sans-serif;
+  --font-brush: 'Yuji Syuku', 'Shippori Mincho', serif;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 66ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: var(--washi);
+  color: var(--sumi);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.2; margin: 0; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(1180px, 100% - var(--gutter) * 2); margin-inline: auto; }
+
+/* ─── Shared: buttons ─────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 26px; border-radius: 999px; border: 0;
+  font: 700 1rem var(--font-body); text-decoration: none; cursor: pointer;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.btn-shu { background: var(--shu); color: #fff; }
+.btn-shu:hover { background: var(--shu-deep); }
+.btn:active { transform: scale(.97); }
+
+/* ─── Shared: parallax layer (moved by js/effects/parallax.js) ────────────── */
+.layer { position: absolute; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .layer { transform: none !important; }
+}

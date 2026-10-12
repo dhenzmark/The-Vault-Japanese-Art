@@ -1,0 +1,5 @@
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+footer { background: var(--sumi); color: rgba(249,246,240,.7); border-top: 1px solid rgba(249,246,240,.1); padding-block: 40px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+footer .brand { color: var(--washi); }
+footer a.btn { background: var(--washi); color: var(--sumi); }

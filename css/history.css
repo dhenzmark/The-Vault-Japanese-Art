@@ -1,0 +1,29 @@
+/* ─── Timeline ───────────────────────────────────────────────────────────── */
+.timeline { position: relative; margin-top: 16px; padding-left: clamp(28px, 5vw, 56px); }
+.timeline::before, .timeline-ink {
+  content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px;
+}
+.timeline::before { background: var(--washi-deep); }
+.timeline-ink { background: var(--shu); transform-origin: top; transform: scaleY(0); }
+.era { position: relative; display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: clamp(16px, 4vw, 56px); padding-block: 28px; }
+.era + .era { border-top: 1px solid var(--washi-deep); }
+.era::before {
+  content: ''; position: absolute; left: calc(-1 * clamp(28px, 5vw, 56px) + 3px); top: 38px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--washi); border: 2px solid var(--sumi-soft);
+  transition: background-color .3s ease, border-color .3s ease;
+}
+.era.is-passed::before { background: var(--shu); border-color: var(--shu); }
+.era-date { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; color: var(--shu); }
+.era-kanji { font-family: var(--font-brush); font-size: 2.6rem; line-height: 1.1; margin-top: 6px; }
+.era h3 { font-size: 1.6rem; margin-bottom: .5em; }
+.era p { max-width: var(--measure); color: var(--sumi-soft); }
+.era ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.era li { font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--washi-deep); color: var(--sumi); }
+
+@media (max-width: 640px) {
+  .era { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .timeline-ink { transform: scaleY(1); }
+}

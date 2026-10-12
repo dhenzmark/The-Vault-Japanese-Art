@@ -1,0 +1,47 @@
+/* ─── Characteristics ───────────────────────────────────────────────────── */
+.char { background: var(--washi-deep); overflow: hidden; }
+.char .ghost { position: absolute; left: -2vw; top: 10%; }
+.char-intro { margin-bottom: clamp(40px, 6vw, 72px); }
+.cores { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(56px, 8vw, 96px); }
+/* The script names three characteristics in order, so they are numbered */
+.core-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid var(--sumi); }
+.core-num {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--shu); color: #fff; font: 700 1.1rem var(--font-head); align-self: center;
+}
+.core-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.core-jp { margin-left: auto; font-family: var(--font-brush); font-size: 1.8rem; color: var(--shu); }
+.core > .lead { margin-bottom: 28px; }
+.themes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); }
+.theme-list { margin: 0; padding: 0; list-style: none; }
+.theme-list li { padding: 18px 0; border-top: 1px solid rgba(28,35,49,.12); }
+.theme-list li:last-child { border-bottom: 1px solid rgba(28,35,49,.12); }
+.theme-list strong { font-family: var(--font-head); font-size: 1.15rem; display: block; }
+.theme-list span { color: var(--sumi-soft); }
+
+.principles { display: grid; gap: 20px; }
+.principle {
+  display: grid; grid-template-columns: minmax(120px, 200px) 1fr; gap: clamp(20px, 4vw, 48px); align-items: center;
+  background: var(--washi); border-radius: 20px; padding: clamp(24px, 4vw, 44px);
+  border-left: 4px solid var(--kin);
+}
+.principle-kanji { font-family: var(--font-brush); font-size: clamp(3.5rem, 8vw, 5.5rem); line-height: 1; color: var(--sumi); text-align: center; }
+.principle h4 { font-family: var(--font-head); font-size: 1.4rem; margin: 0 0 .4em; }
+.principle p { max-width: var(--measure); margin: 0; color: var(--sumi-soft); }
+/* Ma practises what it describes: the emptiest block on the page */
+.principle.is-ma { padding-block: clamp(48px, 9vw, 112px); }
+.principle.is-ma .principle-kanji { color: var(--shu); }
+
+.materials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(24px, 5vw, 64px); }
+.material { padding: 22px 0; border-top: 2px solid var(--kin); }
+.material strong { font-family: var(--font-head); font-size: 1.15rem; display: block; margin-bottom: .2em; }
+.material p { margin: 0; color: var(--sumi-soft); }
+
+@media (max-width: 900px) {
+  .themes { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .principle { grid-template-columns: 1fr; }
+  .principle-kanji { text-align: left; }
+  .materials-grid { grid-template-columns: 1fr; }
+}

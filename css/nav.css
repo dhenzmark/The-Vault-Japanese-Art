@@ -1,0 +1,39 @@
+/* ─── Navigation ─────────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 16px; left: 50%; z-index: 50;
+  transform: translateX(-50%);
+  width: min(1180px, 100% - 32px);
+  display: flex; align-items: center; gap: 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(28, 35, 49, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  color: #fff;
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease;
+}
+.nav.is-solid { background: rgba(249, 246, 240, 0.9); color: var(--sumi); border-color: rgba(28, 35, 49, 0.1); }
+/* .brand and .seal are also used by the footer */
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-head); font-weight: 700; white-space: nowrap; }
+.seal {
+  display: grid; place-items: center;
+  width: 30px; height: 30px; border-radius: 4px;
+  background: var(--shu); color: #fff;
+  font-family: var(--font-brush); font-size: .8rem; line-height: 1;
+  writing-mode: vertical-rl;
+}
+.nav-links { display: flex; gap: 4px; margin: 0 auto; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  display: block; padding: 6px 14px; border-radius: 999px;
+  text-decoration: none; font-size: .9rem; white-space: nowrap;
+  transition: background-color .25s ease;
+}
+.nav-links a:hover { background: rgba(255, 255, 255, 0.16); }
+.nav.is-solid .nav-links a:hover { background: var(--washi-deep); }
+.nav-links a.is-active { background: var(--shu); color: #fff; }
+
+@media (max-width: 640px) {
+  .brand-name { display: none; }
+  .nav { padding-left: 8px; }
+}

@@ -1,0 +1,14 @@
+/* ─── Sections ───────────────────────────────────────────────────────────── */
+section { position: relative; padding-block: clamp(72px, 12vw, 140px); }
+.section-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: clamp(32px, 5vw, 56px); flex-wrap: wrap; }
+.section-head h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); }
+.section-head .jp { font-family: var(--font-brush); color: var(--shu); font-size: clamp(1.4rem, 2.6vw, 2rem); }
+.lead { max-width: var(--measure); font-size: 1.15rem; color: var(--sumi-soft); }
+
+/* Faint oversized kanji drifting behind sections */
+.ghost {
+  font-family: var(--font-brush); color: var(--sumi); opacity: .07;
+  font-size: clamp(14rem, 34vw, 30rem); line-height: 1;
+  pointer-events: none; user-select: none; z-index: 0;
+}
+section > .wrap { position: relative; z-index: 1; }
