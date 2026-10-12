@@ -14,7 +14,7 @@
 .pattern-band {
   position: absolute; left: 0; right: 0; top: 0; height: 22px; opacity: .9;
   background: var(--washi-deep) var(--pattern);
-  background-position: calc(var(--scroll, 0) * -0.35px) 0;
+  /* background-position is slid sideways by js/effects/parallax.js */
 }
 
 /* ─── Plate: a picture on a patterned mat ─────────────────────────────────── */

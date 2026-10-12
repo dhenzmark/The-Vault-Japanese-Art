@@ -58,3 +58,6 @@
   .stat strong { font-size: 1.25rem; }
   .stat span { font-size: .75rem; }
 }
+@media (max-width: 1024px) {
+  .hero-stats { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(28, 35, 49, 0.5); }
+}
