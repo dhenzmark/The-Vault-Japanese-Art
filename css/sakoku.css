@@ -24,6 +24,14 @@
   .ukiyo-subjects { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .contrast { font-size: .85rem; }
-  .contrast th, .contrast td { padding: 10px 8px; }
+  .contrast, .contrast tbody, .contrast tr, .contrast th, .contrast td { display: block; }
+  .contrast thead { display: none; }
+  .contrast caption { display: block; width: auto; }
+  .contrast tr { padding: 14px 0; border-bottom: 1px solid var(--washi-deep); }
+  .contrast th, .contrast td { padding: 0; border: 0; }
+  .contrast tbody th { font-size: 1.05rem; color: var(--sumi); margin-bottom: 6px; }
+  .contrast td { display: grid; grid-template-columns: 96px 1fr; gap: 8px; padding: 3px 0; }
+  .contrast td::before { content: attr(data-label); font-family: var(--font-head); font-weight: 700; color: var(--sumi); }
+  .contrast td:last-child::before { color: var(--shu); }
+  .ukiyo-subjects { gap: 20px; }
 }

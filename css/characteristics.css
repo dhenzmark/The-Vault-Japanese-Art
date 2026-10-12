@@ -10,7 +10,7 @@
   background: var(--shu); color: #fff; font: 700 1.1rem var(--font-head); align-self: center;
 }
 .core-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
-.core-jp { margin-left: auto; font-family: var(--font-brush); font-size: 1.8rem; color: var(--shu); }
+.core-jp { white-space: nowrap; margin-left: auto; font-family: var(--font-brush); font-size: 1.8rem; color: var(--shu); }
 .core > .lead { margin-bottom: 28px; }
 .themes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); }
 .theme-list { margin: 0; padding: 0; list-style: none; }
@@ -41,7 +41,16 @@
   .themes { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .principle { grid-template-columns: 1fr; }
-  .principle-kanji { text-align: left; }
+  .cores { gap: 48px; }
+  .core-head { display: grid; grid-template-columns: 36px 1fr; column-gap: 12px; row-gap: 0; align-items: center; }
+  .core-num { width: 36px; height: 36px; font-size: 1rem; grid-row: span 2; }
+  .core-head h3 { font-size: 1.4rem; }
+  .core-jp { grid-column: 2; margin-left: 0; font-size: 1.1rem; }
+  .principle { grid-template-columns: 52px 1fr; gap: 14px; align-items: start; padding: 18px; border-radius: 16px; }
+  .principle-kanji { font-size: 2.4rem; text-align: left; }
+  .principle.is-ma { padding-block: 32px; }
+  .principle h4 { font-size: 1.15rem; }
+  .theme-list li { padding: 14px 0; }
   .materials-grid { grid-template-columns: 1fr; }
+  .material { padding: 16px 0; }
 }

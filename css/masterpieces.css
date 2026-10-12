@@ -24,3 +24,8 @@
 @media (prefers-reduced-motion: reduce) {
   .work-media img { transform: none !important; }
 }
+@media (max-width: 640px) {
+  .works { gap: 56px; }
+  .work { gap: 18px; }
+  .work h3 { font-size: 1.5rem; }
+}

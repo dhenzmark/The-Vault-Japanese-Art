@@ -22,7 +22,11 @@
 .era li { font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--washi-deep); color: var(--sumi); }
 
 @media (max-width: 640px) {
-  .era { grid-template-columns: 1fr; }
+  .era { grid-template-columns: 1fr; gap: 6px; padding-block: 20px; }
+  .era > div:first-child { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .era-kanji { font-size: 1.5rem; margin-top: 0; }
+  .era::before { top: 28px; }
+  .era h3 { font-size: 1.35rem; margin-bottom: .35em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .timeline-ink { transform: scaleY(1); }

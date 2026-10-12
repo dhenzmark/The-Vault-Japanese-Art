@@ -15,10 +15,10 @@ export const Sakoku = () => `
           <caption>How the two traditions differed during the Edo period</caption>
           <thead><tr><th scope="col"></th><th scope="col">Western painting</th><th scope="col">Edo Japan</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Aim</th><td>A realistic illusion of depth, built with linear perspective and light and shadow</td><td>Flat areas of colour, strong outlines, and decorative pattern</td></tr>
-            <tr><th scope="row">Medium</th><td>Oil paint on canvas</td><td>Woodblock prints, ink on paper and silk, gold-leaf screens</td></tr>
-            <tr><th scope="row">Viewpoint</th><td>One fixed vantage point</td><td>High, shifting viewpoints and bold cropping</td></tr>
-            <tr><th scope="row">Subjects</th><td>Religion, history, and portraits of the elite</td><td>Townspeople, actors, travellers, and the seasons</td></tr>
+            <tr><th scope="row">Aim</th><td data-label="West">A realistic illusion of depth, built with linear perspective and light and shadow</td><td data-label="Edo Japan">Flat areas of colour, strong outlines, and decorative pattern</td></tr>
+            <tr><th scope="row">Medium</th><td data-label="West">Oil paint on canvas</td><td data-label="Edo Japan">Woodblock prints, ink on paper and silk, gold-leaf screens</td></tr>
+            <tr><th scope="row">Viewpoint</th><td data-label="West">One fixed vantage point</td><td data-label="Edo Japan">High, shifting viewpoints and bold cropping</td></tr>
+            <tr><th scope="row">Subjects</th><td data-label="West">Religion, history, and portraits of the elite</td><td data-label="Edo Japan">Townspeople, actors, travellers, and the seasons</td></tr>
           </tbody>
         </table>
       </div>

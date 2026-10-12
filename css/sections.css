@@ -12,3 +12,13 @@ section { position: relative; padding-block: clamp(72px, 12vw, 140px); }
   pointer-events: none; user-select: none; z-index: 0;
 }
 section > .wrap { position: relative; z-index: 1; }
+/* Phones: less dead space between sections, and the Japanese label tucks in above the title
+   instead of dangling on its own line after it */
+@media (max-width: 640px) {
+  section { padding-block: 56px; }
+  .section-head { flex-direction: column-reverse; align-items: flex-start; gap: 2px; margin-bottom: 20px; }
+  .section-head h2 { font-size: 1.9rem; }
+  .section-head .jp { font-size: 1.15rem; }
+  .lead { font-size: 1.05rem; }
+  .ghost { font-size: 11rem; }
+}
