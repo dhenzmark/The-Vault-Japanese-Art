@@ -7,10 +7,12 @@ const smallScreen = window.matchMedia('(max-width: 640px)')
 //                      + drifts slower than the page, - faster.
 // [data-speed-mobile]  optional gentler speed on phones, where stacked blocks sit closer together
 // [data-parallax]      an oversized image drifting inside its clipped frame, never past the frame's spare height
+// [data-marquee]       a title row that slides sideways as its strip passes through the screen
 // --scroll             page offset exposed to CSS, used to slide the pattern bands sideways
 export const initParallax = () => {
   const layers = [...document.querySelectorAll('[data-speed]')]
   const images = [...document.querySelectorAll('[data-parallax]')]
+  const rows = [...document.querySelectorAll('[data-marquee]')]
   const root = document.documentElement
 
   onScroll(({ vh, scrollY }) => {
@@ -22,6 +24,8 @@ export const initParallax = () => {
     const layerRects = layers.map(el => el.parentElement.getBoundingClientRect())
     const frameRects = images.map(el => el.parentElement.getBoundingClientRect())
     const imageHeights = images.map(el => el.offsetHeight)
+    const rowRects = rows.map(el => el.parentElement.getBoundingClientRect())
+    const rowWidths = rows.map(el => el.offsetWidth)
 
     // Write phase
     layers.forEach((el, i) => {
@@ -43,6 +47,14 @@ export const initParallax = () => {
         const fromCenter = r.top + r.height / 2 - vh / 2
         el.style.transform = speed ? `translate3d(0, ${(-fromCenter * speed).toFixed(1)}px, 0)` : ''
       }
+    })
+
+    // Title strips: start a third of the way into the row and slide as the strip crosses the screen
+    rows.forEach((el, i) => {
+      const r = rowRects[i]
+      if (r.bottom < 0 || r.top > vh) return
+      const x = -rowWidths[i] * 0.3 + (vh - r.top) * parseFloat(el.dataset.marquee)
+      el.style.transform = `translate3d(${x.toFixed(1)}px, 0, 0)`
     })
 
     images.forEach((el, i) => {

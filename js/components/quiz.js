@@ -3,7 +3,7 @@ import { questions } from '../data/quiz.js'
 // Match the Masterpiece: section shell. The card content is drawn by initQuiz().
 export const Quiz = () => `
   <section id="quiz" class="quiz has-ghost">
-    <div class="ghost layer ghost-right ghost-light" data-speed="0.35" data-speed-mobile="0.2" aria-hidden="true">問</div>
+    <div class="ghost layer ghost-right ghost-light" data-speed="0.55" data-speed-mobile="0.35" aria-hidden="true">問</div>
     <div class="wrap">
       <div class="section-head"><h2>Match the Masterpiece</h2><span class="jp">クイズ</span></div>
       <p class="lead">Five questions on the works and ideas above. Pick an answer to see if you're right.</p>

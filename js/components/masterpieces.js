@@ -4,9 +4,9 @@ import { artworks } from '../data/artworks.js'
 const Work = (a) => `
   <article class="work">
     <button class="work-media" type="button" data-open="${a.id}" aria-label="Open analysis of ${a.title}"${a.frame ? ` style="aspect-ratio:${a.frame}"` : ''}>
-      <img src="${a.image}" alt="${a.title}" loading="lazy" decoding="async"${a.drift === false ? ' class="no-drift"' : ' data-parallax="0.22"'}${a.focus ? ` style="object-position:${a.focus}"` : ''} />
+      <img src="${a.image}" alt="${a.title}" loading="lazy" decoding="async"${a.drift === false ? ' class="no-drift"' : ' data-parallax="0.35"'}${a.focus ? ` style="object-position:${a.focus}"` : ''} />
     </button>
-    <div class="work-text" data-speed="0.06" data-speed-mobile="0">
+    <div class="work-text" data-speed="0.12" data-speed-mobile="0">
       <div class="work-date">${a.date}</div>
       <h3>${a.title}</h3>
       <div class="jp-title" lang="ja">${a.jp}</div>
@@ -24,7 +24,7 @@ const Work = (a) => `
 // Part 3: the five representative artworks, oldest first.
 export const Masterpieces = () => `
   <section id="masterpieces" class="has-ghost">
-    <div class="ghost layer ghost-right" data-speed="0.35" data-speed-mobile="0.2" aria-hidden="true">名</div>
+    <div class="ghost layer ghost-right" data-speed="0.55" data-speed-mobile="0.35" aria-hidden="true">名</div>
     <div class="wrap">
       <div class="section-head"><h2>Representative Masterpieces</h2><span class="jp">名作</span></div>
       <p class="lead">Five works, oldest first, each standing for a different era and idea. Select an image or "Read the analysis" for the full study.</p>

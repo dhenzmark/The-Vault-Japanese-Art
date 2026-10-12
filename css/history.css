@@ -9,7 +9,7 @@
 /* Each era: picture on a patterned mat beside its story */
 .era {
   position: relative; display: grid; grid-template-columns: minmax(240px, 340px) 1fr;
-  gap: clamp(20px, 4vw, 56px); align-items: start; padding-block: 36px;
+  gap: clamp(20px, 4vw, 56px); align-items: start; padding-block: 64px;
 }
 .era + .era { border-top: 1px solid var(--washi-deep); }
 .era::before {
@@ -31,7 +31,7 @@
 .era li { font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--washi-deep); color: var(--sumi); }
 
 @media (max-width: 640px) {
-  .era { grid-template-columns: 1fr; gap: 14px; padding-block: 28px; }
+  .era { grid-template-columns: 1fr; gap: 36px; padding-block: 36px; }
   .era::before { top: 40px; }
   .era h3 { font-size: 1.35rem; margin-bottom: .35em; }
 }

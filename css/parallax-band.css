@@ -7,7 +7,7 @@
 }
 .band-media { position: absolute; inset: 0; overflow: hidden; }
 /* Oversized so the image can drift without its edges showing (js/effects/parallax.js clamps to this) */
-.band-media img { position: absolute; left: -3%; top: -35%; width: 106%; height: 170%; object-fit: cover; will-change: transform; }
+.band-media img { position: absolute; left: -8%; top: -60%; width: 116%; height: 220%; object-fit: cover; will-change: transform; }
 .band-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,35,49,.82) 0%, rgba(28,35,49,.35) 60%, rgba(28,35,49,.15) 100%); }
 .band-right .band-shade { background: linear-gradient(270deg, rgba(28,35,49,.82) 0%, rgba(28,35,49,.35) 60%, rgba(28,35,49,.15) 100%); }
 
@@ -29,7 +29,7 @@
 .band-right .band-copy blockquote, .band-right .band-text, .band-right .band-copy figcaption { margin-left: auto; text-align: right; }
 
 @media (max-width: 640px) {
-  .band { height: auto; min-height: 460px; align-items: flex-end; padding-block: 40px; }
+  .band { height: auto; min-height: 480px; align-items: flex-end; padding-block: 40px 90px; } /* room for the quote to float down */
   .band-shade, .band-right .band-shade { background: linear-gradient(180deg, rgba(28,35,49,.15) 0%, rgba(28,35,49,.55) 45%, rgba(28,35,49,.92) 100%); }
   .band-kanji, .band-right .band-kanji { top: 20px; right: 16px; left: auto; font-size: 5.5rem; opacity: .85; }
   .band-copy blockquote, .band-text { font-size: 1.35rem; max-width: none; }

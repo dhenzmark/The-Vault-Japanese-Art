@@ -1,0 +1,24 @@
+/* ─── Scroll-driven title strips ──────────────────────────────────────────── */
+.marquee {
+  position: relative; overflow: hidden;
+  padding-block: clamp(28px, 5vw, 56px);
+  background: var(--washi);
+  border-block: 1px solid var(--washi-deep);
+}
+.marquee-row {
+  display: flex; align-items: center; gap: clamp(18px, 3vw, 40px);
+  width: max-content; white-space: nowrap;
+  font-family: var(--font-head); font-weight: 800; line-height: 1.05;
+  font-size: clamp(3.2rem, 11vw, 9rem); color: var(--sumi);
+  will-change: transform;
+}
+.marquee-row + .marquee-row { margin-top: clamp(4px, 1vw, 12px); }
+.mq-jp { font-family: var(--font-brush); font-weight: 400; color: var(--shu); }
+.mq-dot { width: .22em; height: .22em; border-radius: 2px; background: var(--kin); rotate: 45deg; flex: none; }
+/* Second row: outlined letters moving the other way */
+.marquee-row.is-outline { color: transparent; -webkit-text-stroke: 1.5px var(--sumi); }
+.marquee-row.is-outline .mq-jp { color: transparent; -webkit-text-stroke: 1.5px var(--shu); }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-row { transform: none !important; }
+}

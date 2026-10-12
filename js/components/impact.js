@@ -5,17 +5,17 @@ import { Plate } from './plate.js'
 export const Impact = () => `
     <section id="impact" class="impact">
       <div class="pattern-band pattern-shippo" aria-hidden="true"></div>
-      <div class="ghost layer" data-speed="0.4" aria-hidden="true">響</div>
+      <div class="ghost layer" data-speed="0.6" data-speed-mobile="0.4" aria-hidden="true">響</div>
       <div class="wrap">
         <div class="section-head"><h2>Philosophical Impact</h2><span class="jp">影響</span></div>
 
         <figure class="compare">
           <div class="compare-pair">
-            <div class="compare-item" data-speed="0.09" data-speed-mobile="0.04">
+            <div class="compare-item" data-speed="0.16" data-speed-mobile="0.07">
               <span class="compare-year">1857</span>
               ${Plate({ image: images.hiroshige, pattern: 'seigaiha', seal: '広重' })}
             </div>
-            <div class="compare-item" data-speed="-0.09" data-speed-mobile="-0.04">
+            <div class="compare-item" data-speed="-0.16" data-speed-mobile="-0.07">
               <span class="compare-year">1887</span>
               ${Plate({ image: images.vanGogh, pattern: 'shippo', seal: 'ゴッホ' })}
             </div>

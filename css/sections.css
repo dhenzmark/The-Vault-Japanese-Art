@@ -7,7 +7,7 @@ section { position: relative; padding-block: clamp(72px, 12vw, 140px); }
 
 /* Faint oversized kanji drifting behind sections */
 .ghost {
-  font-family: var(--font-brush); color: var(--sumi); opacity: .07;
+  font-family: var(--font-brush); color: var(--sumi); opacity: .1;
   font-size: clamp(14rem, 34vw, 30rem); line-height: 1;
   pointer-events: none; user-select: none; z-index: 0;
 }
@@ -27,5 +27,5 @@ section > .wrap { position: relative; z-index: 1; }
 .has-ghost { overflow: hidden; }
 .ghost-right { position: absolute; right: -4vw; top: 6%; }
 .ghost-left { position: absolute; left: -3vw; top: 10%; }
-.ghost-light { color: var(--washi); opacity: .06; }
+.ghost-light { color: var(--washi); opacity: .08; }
 [data-speed] { will-change: transform; }
